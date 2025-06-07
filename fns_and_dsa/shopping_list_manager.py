@@ -1,3 +1,5 @@
+
+
 def display_menu():
     print("Shopping List Manager")
     print("1. Add Item")
@@ -9,9 +11,12 @@ def main():
     shopping_list = []
     while True:
         display_menu()
-        choice = input("Enter your choice (1-4): ")
+        choice = input("Enter your choice (1-4): ").strip()
         try:
             choice = int(choice)
+            if choice not in range(1, 5):
+                print("Invalid choice. Please enter a number between 1 and 4.")
+                continue
             if choice == 1:
                 item = input("Enter item to add: ").strip()
                 if item:
@@ -36,10 +41,8 @@ def main():
             elif choice == 4:
                 print("Goodbye!")
                 break
-            else:
-                print("Invalid choice. Please enter a number between 1 and 4.")
         except ValueError:
-            print("Invalid input. Please enter a number.")
+            print("Invalid input. Please enter a number between 1 and 4.")
 
 if __name__ == "__main__":
     main()
