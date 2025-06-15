@@ -1,4 +1,3 @@
-
 import json
 
 class BankAccount:
@@ -26,7 +25,7 @@ class BankAccount:
         return False
 
     def display_balance(self):
-        print(f"Current Balance: ${self._account_balance:.2f}")
+        print(f"{self._account_balance:.2f}")
 
     def save_balance(self):
         with open(self._filename, 'w') as f:
